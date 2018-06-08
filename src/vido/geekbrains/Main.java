@@ -11,6 +11,10 @@
 
 package vido.geekbrains;
 
+import vido.geekbrains.Animal.Animal;
+import vido.geekbrains.Animal.Cat;
+import vido.geekbrains.Animal.Dog;
+
 import java.util.Scanner;
 
 public class Main {
