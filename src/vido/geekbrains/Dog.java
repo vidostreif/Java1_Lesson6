@@ -2,7 +2,8 @@ package vido.geekbrains;
 
 public class Dog extends Animal {
 
-    public Dog(){
+    public Dog() {
+        setTypeAanimal("Собака");
         setMinHeightJump(1);
         setMaxHeightJump(2);
         setMinRunningDistance(400);
@@ -13,9 +14,4 @@ public class Dog extends Animal {
         SetRandomParameters();
     }
 
-    @Override
-    public void Info(){
-        System.out.println("Данные этой собаки:");
-        super.Info();
-    }
 }

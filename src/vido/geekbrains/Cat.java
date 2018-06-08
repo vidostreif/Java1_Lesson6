@@ -1,8 +1,9 @@
 package vido.geekbrains;
 
-public class Cat extends Animal{
+public class Cat extends Animal {
 
-    public Cat(){
+    public Cat() {
+        setTypeAanimal("Кошка");
         setMinHeightJump(2);
         setMaxHeightJump(3);
         setMinRunningDistance(200);
@@ -13,9 +14,4 @@ public class Cat extends Animal{
         SetRandomParameters();
     }
 
-    @Override
-    public void Info(){
-        System.out.println("Данные этого кота:");
-        super.Info();
-    }
 }

@@ -3,6 +3,9 @@ package vido.geekbrains;
 import java.util.Random;
 
 public class Animal {
+    private String typeAanimal;
+    private int score;
+
     private int minRunningDistance;
     private int minSwimmingDistance;
     private int minHeightJump;
@@ -15,7 +18,8 @@ public class Animal {
     private int swimmingDistance;
     private int heightJump;
 
-    public Animal(){}
+    public Animal() {
+    }
 
     public boolean Run(int distance) {
         if (distance <= this.runningDistance) {
@@ -41,19 +45,35 @@ public class Animal {
         }
     }
 
-    protected void SetRandomParameters(){
+    protected void SetRandomParameters() {
         Random rand = new Random();
-        this.runningDistance = minRunningDistance + rand.nextInt(maxRunningDistance-minRunningDistance+1);
-        this.swimmingDistance = minSwimmingDistance + rand.nextInt(maxSwimmingDistance-minSwimmingDistance+1);
-        this.heightJump = minHeightJump + rand.nextInt(maxHeightJump-minHeightJump+1);
+        this.runningDistance = minRunningDistance + rand.nextInt(maxRunningDistance - minRunningDistance + 1);
+        this.swimmingDistance = minSwimmingDistance + rand.nextInt(maxSwimmingDistance - minSwimmingDistance + 1);
+        this.heightJump = minHeightJump + rand.nextInt(maxHeightJump - minHeightJump + 1);
     }
 
-    public void Info(){
-        System.out.println("Это животное может бегать на расстоянии " + this.runningDistance + " м., плавать на расстоянии " + this.swimmingDistance + " м., и прягать на высоту " + this.heightJump + " м..");
+    public void Info() {
+        System.out.println("Эта " + this.typeAanimal + " может бегать на расстоянии " + this.runningDistance + " м., плавать на расстоянии " + this.swimmingDistance + " м., и прыгать на высоту " + this.heightJump + " м..");
     }
 
-    public int getMaxRunningDistance() {
-        return maxRunningDistance;
+    public int getScore() {
+        return score;
+    }
+
+    public void increaseScore() {
+        this.score++;
+    }
+
+    public void decreaseScore() {
+        this.score--;
+    }
+
+    public String getTypeAanimal() {
+        return typeAanimal;
+    }
+
+    public void setTypeAanimal(String typeAanimal) {
+        this.typeAanimal = typeAanimal;
     }
 
     public void setMaxRunningDistance(int maxRunningDistance) {
@@ -64,20 +84,12 @@ public class Animal {
         }
     }
 
-    public int getMaxSwimmingDistance() {
-        return maxSwimmingDistance;
-    }
-
     public void setMaxSwimmingDistance(int maxSwimmingDistance) {
         if (maxSwimmingDistance >= 0) {
             this.maxSwimmingDistance = maxSwimmingDistance;
         } else {
             System.out.println("Максимальная дистанция для плавания должна быть не отрицательной!");
         }
-    }
-
-    public int getMaxHeightJump() {
-        return maxHeightJump;
     }
 
     public void setMaxHeightJump(int maxHeightJump) {
@@ -88,10 +100,6 @@ public class Animal {
         }
     }
 
-    public int getMinRunningDistance() {
-        return minRunningDistance;
-    }
-
     public void setMinRunningDistance(int minRunningDistance) {
         if (minRunningDistance >= 0) {
             this.minRunningDistance = minRunningDistance;
@@ -100,20 +108,12 @@ public class Animal {
         }
     }
 
-    public int getMinSwimmingDistance() {
-        return minSwimmingDistance;
-    }
-
     public void setMinSwimmingDistance(int minSwimmingDistance) {
         if (minSwimmingDistance >= 0) {
             this.minSwimmingDistance = minSwimmingDistance;
         } else {
             System.out.println("Минимальная дистанция для плавания должна быть не отрицательной!");
         }
-    }
-
-    public int getMinHeightJump() {
-        return minHeightJump;
     }
 
     public void setMinHeightJump(int minHeightJump) {
