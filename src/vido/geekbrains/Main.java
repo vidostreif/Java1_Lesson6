@@ -3,6 +3,10 @@ package vido.geekbrains;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+
+        dog.Info();
+        cat.Info();
     }
 }

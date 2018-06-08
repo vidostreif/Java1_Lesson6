@@ -1,18 +1,24 @@
 package vido.geekbrains;
 
+import java.util.Random;
+
 public class Animal {
+    private int minRunningDistance;
+    private int minSwimmingDistance;
+    private int minHeightJump;
+
     private int maxRunningDistance;
     private int maxSwimmingDistance;
     private int maxHeightJump;
 
-    public Animal(int maxRunningDistance, int maxSwimmingDistance, int maxHeightJump) {
-        this.setMaxRunningDistance(maxRunningDistance);
-        this.setMaxSwimmingDistance(maxSwimmingDistance);
-        this.setMaxHeightJump(maxHeightJump);
-    }
+    private int runningDistance;
+    private int swimmingDistance;
+    private int heightJump;
+
+    public Animal(){}
 
     public boolean Run(int distance) {
-        if (distance <= this.maxRunningDistance) {
+        if (distance <= this.runningDistance) {
             return true;
         } else {
             return false;
@@ -20,7 +26,7 @@ public class Animal {
     }
 
     public boolean Jump(int height) {
-        if (height <= this.maxHeightJump) {
+        if (height <= this.heightJump) {
             return true;
         } else {
             return false;
@@ -28,11 +34,22 @@ public class Animal {
     }
 
     public boolean Swim(int distance) {
-        if (distance <= this.maxSwimmingDistance) {
+        if (distance <= this.swimmingDistance) {
             return true;
         } else {
             return false;
         }
+    }
+
+    protected void SetRandomParameters(){
+        Random rand = new Random();
+        this.runningDistance = minRunningDistance + rand.nextInt(maxRunningDistance-minRunningDistance+1);
+        this.swimmingDistance = minSwimmingDistance + rand.nextInt(maxSwimmingDistance-minSwimmingDistance+1);
+        this.heightJump = minHeightJump + rand.nextInt(maxHeightJump-minHeightJump+1);
+    }
+
+    public void Info(){
+        System.out.println("Это животное может бегать на расстоянии " + this.runningDistance + " м., плавать на расстоянии " + this.swimmingDistance + " м., и прягать на высоту " + this.heightJump + " м..");
     }
 
     public int getMaxRunningDistance() {
@@ -43,9 +60,8 @@ public class Animal {
         if (maxRunningDistance >= 0) {
             this.maxRunningDistance = maxRunningDistance;
         } else {
-            System.out.println("Дистанция для бега должна быть не отрицательной!");
+            System.out.println("Максимальная дистанция для бега должна быть не отрицательной!");
         }
-
     }
 
     public int getMaxSwimmingDistance() {
@@ -56,9 +72,8 @@ public class Animal {
         if (maxSwimmingDistance >= 0) {
             this.maxSwimmingDistance = maxSwimmingDistance;
         } else {
-            System.out.println("Дистанция для плавания должна быть не отрицательной!");
+            System.out.println("Максимальная дистанция для плавания должна быть не отрицательной!");
         }
-
     }
 
     public int getMaxHeightJump() {
@@ -69,8 +84,55 @@ public class Animal {
         if (maxHeightJump >= 0) {
             this.maxHeightJump = maxHeightJump;
         } else {
-            System.out.println("Высота прыжка должна быть не отрицательной!");
+            System.out.println("Максимальная высота прыжка должна быть не отрицательной!");
         }
+    }
 
+    public int getMinRunningDistance() {
+        return minRunningDistance;
+    }
+
+    public void setMinRunningDistance(int minRunningDistance) {
+        if (minRunningDistance >= 0) {
+            this.minRunningDistance = minRunningDistance;
+        } else {
+            System.out.println("Минимальная дистанция для бега должна быть не отрицательной!");
+        }
+    }
+
+    public int getMinSwimmingDistance() {
+        return minSwimmingDistance;
+    }
+
+    public void setMinSwimmingDistance(int minSwimmingDistance) {
+        if (minSwimmingDistance >= 0) {
+            this.minSwimmingDistance = minSwimmingDistance;
+        } else {
+            System.out.println("Минимальная дистанция для плавания должна быть не отрицательной!");
+        }
+    }
+
+    public int getMinHeightJump() {
+        return minHeightJump;
+    }
+
+    public void setMinHeightJump(int minHeightJump) {
+        if (minHeightJump >= 0) {
+            this.minHeightJump = minHeightJump;
+        } else {
+            System.out.println("Минимальная высота прыжка должна быть не отрицательной!");
+        }
+    }
+
+    public int getRunningDistance() {
+        return runningDistance;
+    }
+
+    public int getSwimmingDistance() {
+        return swimmingDistance;
+    }
+
+    public int getHeightJump() {
+        return heightJump;
     }
 }
