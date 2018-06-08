@@ -35,10 +35,10 @@ public class Main {
         runningDistance = in.nextInt();
         for (Animal animal : animals) {
             if (animal.Run(runningDistance)) {
-                System.out.println(animal.getTypeAanimal() + " смолга пробежать это расстояние!)");
+                System.out.println(animal.getTypeAnimal() + " смолга пробежать это расстояние!)");
                 animal.increaseScore();
             } else {
-                System.out.println(animal.getTypeAanimal() + " не смолга пробежать это расстояние!(");
+                System.out.println(animal.getTypeAnimal() + " не смолга пробежать это расстояние!(");
             }
         }
 
@@ -47,10 +47,10 @@ public class Main {
         swimmingDistance = in.nextInt();
         for (Animal animal : animals) {
             if (animal.Swim(swimmingDistance)) {
-                System.out.println(animal.getTypeAanimal() + " смолга проплыть это расстояние!)");
+                System.out.println(animal.getTypeAnimal() + " смолга проплыть это расстояние!)");
                 animal.increaseScore();
             } else {
-                System.out.println(animal.getTypeAanimal() + " не смолга проплыть это расстояние!(");
+                System.out.println(animal.getTypeAnimal() + " не смолга проплыть это расстояние!(");
             }
         }
 
@@ -59,10 +59,10 @@ public class Main {
         heightJump = in.nextInt();
         for (Animal animal : animals) {
             if (animal.Jump(heightJump)) {
-                System.out.println(animal.getTypeAanimal() + " смолга перепрыгнуть это препятствие!)");
+                System.out.println(animal.getTypeAnimal() + " смолга перепрыгнуть это препятствие!)");
                 animal.increaseScore();
             } else {
-                System.out.println(animal.getTypeAanimal() + " не смолга перепрыгнуть это препятствие!(");
+                System.out.println(animal.getTypeAnimal() + " не смолга перепрыгнуть это препятствие!(");
             }
         }
 
@@ -76,7 +76,7 @@ public class Main {
         System.out.println("Победителями нашего соревнования стали:");
         for (Animal animal : animals) {
             if (animal.getScore() == maxScore) {
-                System.out.println(animal.getTypeAanimal());
+                System.out.println(animal.getTypeAnimal());
             }
         }
     }

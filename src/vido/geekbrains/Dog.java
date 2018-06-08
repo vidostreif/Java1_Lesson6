@@ -3,7 +3,7 @@ package vido.geekbrains;
 public class Dog extends Animal {
 
     public Dog() {
-        setTypeAanimal("Собака");
+        setTypeAnimal("Собака");
         setMinHeightJump(1);
         setMaxHeightJump(2);
         setMinRunningDistance(400);

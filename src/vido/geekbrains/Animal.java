@@ -3,7 +3,7 @@ package vido.geekbrains;
 import java.util.Random;
 
 public class Animal {
-    private String typeAanimal;
+    private String typeAnimal;
     private int score;
 
     private int minRunningDistance;
@@ -18,7 +18,7 @@ public class Animal {
     private int swimmingDistance;
     private int heightJump;
 
-    public Animal() {
+    protected Animal() {
     }
 
     public boolean Run(int distance) {
@@ -53,7 +53,7 @@ public class Animal {
     }
 
     public void Info() {
-        System.out.println("Эта " + this.typeAanimal + " может бегать на расстоянии " + this.runningDistance + " м., плавать на расстоянии " + this.swimmingDistance + " м., и прыгать на высоту " + this.heightJump + " м..");
+        System.out.println("Эта " + this.typeAnimal + " может бегать на расстоянии " + this.runningDistance + " м., плавать на расстоянии " + this.swimmingDistance + " м., и прыгать на высоту " + this.heightJump + " м..");
     }
 
     public int getScore() {
@@ -68,12 +68,12 @@ public class Animal {
         this.score--;
     }
 
-    public String getTypeAanimal() {
-        return typeAanimal;
+    public String getTypeAnimal() {
+        return typeAnimal;
     }
 
-    public void setTypeAanimal(String typeAanimal) {
-        this.typeAanimal = typeAanimal;
+    public void setTypeAnimal(String typeAnimal) {
+        this.typeAnimal = typeAnimal;
     }
 
     public void setMaxRunningDistance(int maxRunningDistance) {
