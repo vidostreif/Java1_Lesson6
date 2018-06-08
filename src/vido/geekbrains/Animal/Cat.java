@@ -1,4 +1,6 @@
-package vido.geekbrains;
+package vido.geekbrains.Animal;
+
+import vido.geekbrains.Animal.Animal;
 
 public class Cat extends Animal {
 

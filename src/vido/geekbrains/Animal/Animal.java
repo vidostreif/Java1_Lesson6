@@ -1,4 +1,4 @@
-package vido.geekbrains;
+package vido.geekbrains.Animal;
 
 import java.util.Random;
 
